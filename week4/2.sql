@@ -1,22 +1,20 @@
-select name 
-	from University 
+select name from University 
     where location = "Russia";
 
-Select location
-  from Student
-  join University ON University.name = Student.university_name
-  WHERE Student.native_language = "Russian" AND University.location != "Russia";
+select location from Student
+  join University on University.name = Student.university_name
+  where Student.native_language = "Russian" and University.location != "Russia";
     
-Select id 
+select id 
   from Student
-  join University ON University.name = Student.university_name
-  WHERE University.name= "Innopolis University";
+  join University on University.name = Student.university_name
+  where University.name= "Innopolis University";
 
-SELECT name, university_name
-  FROM Course
-  Where credits > 5;
+select name, university_name
+  from Course
+  where credits > 5;
 
-Select DISTINCT university_name
+select distinct university_name
   from Student
-  join University ON University.name = Student.university_name
-  WHERE Student.native_language = "English";
+  join University on University.name = Student.university_name
+  where Student.native_language = "English";
