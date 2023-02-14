@@ -52,7 +52,6 @@ insert into Course (name, credits, university_name) values
     ("Machine Learning in IU", 8, "Innopolis University"),
     ("Statistical Techniques in IU", 8, "Innopolis University");
     
-
 insert into Enroll (student_id, course_name) values
     (1, "Machine Learning in NU"),
     (1, "Statistical Techniques in NU"),
