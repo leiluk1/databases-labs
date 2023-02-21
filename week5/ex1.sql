@@ -26,7 +26,7 @@ GROUP BY student.id;
 --5
 SELECT DISTINCT student.name
 FROM student 
-JOIN takes ON takes.ID = student.ID
+JOIN takes ON takes.id = student.id
 JOIN course ON takes.course_id = course.course_id
 WHERE course.dept_name = 'Comp. Sci.';
 
