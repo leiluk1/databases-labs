@@ -40,8 +40,4 @@ WHERE teaches.id IS NULL;
 SELECT instructor.id, instructor.name
 FROM instructor
 LEFT JOIN teaches ON instructor.id = teaches.id
-WHERE NOT EXISTS (
-  SELECT 1
-  FROM teaches
-  WHERE teaches.id = instructor.id
-);
+WHERE teaches.id IS NULL;
