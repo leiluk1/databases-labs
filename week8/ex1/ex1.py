@@ -4,7 +4,6 @@ from geopy.geocoders import ArcGIS
 
 con = psycopg2.connect(
     database="dvdrental", user="postgres", host="127.0.0.1", port="5432"
-    
 )
 cur = con.cursor()
 cur.execute("SELECT * FROM retrieve_addresses();")
