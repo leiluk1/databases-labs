@@ -1,0 +1,20 @@
+-- 1
+MATCH (f:Fighter)-[:beats]->() 
+WHERE f.weight = 155 OR f.weight = 170 OR f.weight = 185 
+RETURN collect(f.name), f.weight;
+
+-- 2
+MATCH (f1:Fighter)-[:beats]->(f2:Fighter)-[:beats]->(f1:Fighter) 
+RETURN f1.name, f2.name;
+
+-- 3
+MATCH (f:Fighter)-[:beats]-(c)
+RETURN f.name, count(c) AS win
+ORDER BY win DESC
+
+-- 4
+MATCH (f:Fighter)
+WHERE 
+    NOT EXISTS ((f)-[:beats]->()) OR 
+    NOT EXISTS (()-[:beats]->(f))
+RETURN f.name
